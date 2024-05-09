@@ -22,5 +22,3 @@ Para acessar o Javadoc, navegue até o diretório `doc` e abra o arquivo `index.
 ## Conclusão
 A documentação detalhada e o Javadoc são essenciais para qualquer projeto de software, pois facilitam o entendimento do código por desenvolvedores atuais e futuros. Este repositório demonstra como a documentação adequada e o uso de Javadoc podem melhorar a manutenção e a compreensão de um sistema de autenticação de usuários.
 
-## Comandos para Gerar Javadoc
-Caso precise gerar o Javadoc novamente, você pode usar o seguinte comando no diretório raiz do projeto:
