@@ -1,40 +1,26 @@
-# README - Teste de Caixa Branca
+# README - ETAPA 4: Documentação e Javadoc
 
 ## Descrição do Projeto
-Este projeto envolve a análise e proposta de correções para um código Java que realiza conexões com um banco de dados e verifica credenciais de usuário, seguindo os princípios do teste de caixa branca.
+Este repositório contém a implementação e documentação da classe `User` dentro do pacote `org.example`, que é responsável por gerenciar as operações de autenticação de usuários em um sistema que interage com um banco de dados.
 
-## Pontos de Observação no Teste de Caixa Branca
+## Documentação do Código
+A documentação do código foi realizada diretamente nos arquivos fonte em Java, utilizando Javadoc. Isso inclui descrições detalhadas das funcionalidades da classe, seus métodos e variáveis. A documentação ajuda a entender o propósito e o funcionamento do código, facilitando a manutenção e a expansão futuras.
 
-### A documentação foi descrita no código?
-- **Situação Atual**: Não há documentação interna ou comentários explicativos no código.
-- **Proposta de Correção**: Adicionar documentação detalhada e comentários em JavaDoc para facilitar a compreensão e manutenção do código.
+### Classe User
+A classe `User` gerencia a autenticação de usuários. Ela possui métodos para conectar-se ao banco de dados e verificar se um usuário com credenciais específicas existe.
 
-### As variáveis e constantes possuem boa nomenclatura?
-- **Situação Atual**: As variáveis e constantes usam nomes genéricos e pouco descritivos.
-- **Proposta de Correção**: Renomear variáveis e constantes para melhor refletir suas funções e melhorar a clareza do código.
+#### Métodos Principais
+- **conectarBD()**: Estabelece uma conexão com o banco de dados.
+- **verificarUsuario(String login, String senha)**: Verifica se o usuário existe no banco de dados com base no login e senha fornecidos.
 
-### Existem legibilidade e organização no código?
-- **Situação Atual**: O código carece de organização e legibilidade adequadas.
-- **Proposta de Correção**: Reorganizar o código, melhorar a formatação e dividir responsabilidades em métodos mais específicos.
+## Javadoc
+O Javadoc gerado fornece uma interface visual para a documentação do código. Ele está disponível no diretório `doc` do projeto e pode ser acessado abrindo o arquivo `index.html` em um navegador web.
 
-### Todos os null pointers foram tratados?
-- **Situação Atual**: O código não possui tratamento adequado para null pointers.
-- **Proposta de Correção**: Implementar verificações de nullidade e tratamento de exceções para prevenir `NullPointerException`.
-
-### A arquitetura utilizada foi devidamente respeitada?
-- **Situação Atual**: O código não segue uma arquitetura clara ou consistente.
-- **Proposta de Correção**: Definir e seguir uma arquitetura modular para facilitar futuras manutenções e expansões.
-
-### As conexões utilizadas foram fechadas?
-- **Situação Atual**: As conexões com o banco de dados não são fechadas adequadamente, levando a possíveis vazamentos de recursos.
-- **Proposta de Correção**: Assegurar que todas as conexões, `Statement` e `ResultSet` sejam fechadas corretamente em blocos `finally`.
-
-## Ferramentas Utilizadas
-- **FindBugs**: Recomendamos utilizar para identificar e corrigir bugs e problemas de segurança no código.
-- **Git**: Usado para controle de versão e colaboração.
-
-## Observações sobre os testes de caixa branca:
-- **Observações**: Para visualizar as observações acesse a [Planilha](https://docs.google.com/spreadsheets/d/1WgZ5lpHDEd8cVqfdenVvF3V6-dxjeqnROvDYtFF5kqU/edit?usp=sharing) e vá até a aba `CAIXA BRANCA (ESTÁTICO)`
+### Como Acessar o Javadoc
+Para acessar o Javadoc, navegue até o diretório `doc` e abra o arquivo `index.html` em seu navegador. Isso exibirá a documentação gerada, onde você pode visualizar detalhes de cada classe e método documentado.
 
 ## Conclusão
-As propostas de correção baseadas nos princípios de teste de caixa branca visam melhorar a qualidade e segurança do código. Este exercício também enfatiza a importância das boas práticas de programação e do teste contínuo.
+A documentação detalhada e o Javadoc são essenciais para qualquer projeto de software, pois facilitam o entendimento do código por desenvolvedores atuais e futuros. Este repositório demonstra como a documentação adequada e o uso de Javadoc podem melhorar a manutenção e a compreensão de um sistema de autenticação de usuários.
+
+## Comandos para Gerar Javadoc
+Caso precise gerar o Javadoc novamente, você pode usar o seguinte comando no diretório raiz do projeto:
