@@ -1,40 +1,39 @@
-# README - Teste de Caixa Branca
+# README - ETAPA 3: Análise de Fluxo e Complexidade Ciclomática
 
 ## Descrição do Projeto
-Este projeto envolve a análise e proposta de correções para um código Java que realiza conexões com um banco de dados e verifica credenciais de usuário, seguindo os princípios do teste de caixa branca.
+Este documento detalha a análise de fluxo e a complexidade ciclomática do método `verificarUsuario` da classe `User`, que é parte de um sistema de autenticação de usuários.
 
-## Pontos de Observação no Teste de Caixa Branca
+## Grafo de Fluxo
+O grafo de fluxo do método `verificarUsuario` é apresentado abaixo. Ele ilustra os diferentes caminhos que a execução do método pode seguir, dependendo das condições encontradas durante a execução.
 
-### A documentação foi descrita no código?
-- **Situação Atual**: Não há documentação interna ou comentários explicativos no código.
-- **Proposta de Correção**: Adicionar documentação detalhada e comentários em JavaDoc para facilitar a compreensão e manutenção do código.
+![Grafo de Fluxo](https://i.imgur.com/frhRWFq.png)
 
-### As variáveis e constantes possuem boa nomenclatura?
-- **Situação Atual**: As variáveis e constantes usam nomes genéricos e pouco descritivos.
-- **Proposta de Correção**: Renomear variáveis e constantes para melhor refletir suas funções e melhorar a clareza do código.
+## Complexidade Ciclomática
+A complexidade ciclomática é uma métrica de software que fornece uma medida quantitativa da complexidade lógica de um programa. Ela é calculada com base no número de caminhos independentes através do código, que é determinado pelo grafo de fluxo.
 
-### Existem legibilidade e organização no código?
-- **Situação Atual**: O código carece de organização e legibilidade adequadas.
-- **Proposta de Correção**: Reorganizar o código, melhorar a formatação e dividir responsabilidades em métodos mais específicos.
+### Cálculo
+A complexidade ciclomática \( V(G) \) pode ser calculada como:
+\[ V(G) = E - N + 2P \]
+onde:
+- \( E \) é o número de arestas no grafo.
+- \( N \) é o número de nodos no grafo.
+- \( P \) é o número de componentes conexos (geralmente 1 em programas conectados).
 
-### Todos os null pointers foram tratados?
-- **Situação Atual**: O código não possui tratamento adequado para null pointers.
-- **Proposta de Correção**: Implementar verificações de nullidade e tratamento de exceções para prevenir `NullPointerException`.
+Para o grafo de fluxo fornecido:
+- \( E = 9 \) (número de arestas)
+- \( N = 8 \) (número de nodos)
+- \( P = 1 \) (um componente conexo)
 
-### A arquitetura utilizada foi devidamente respeitada?
-- **Situação Atual**: O código não segue uma arquitetura clara ou consistente.
-- **Proposta de Correção**: Definir e seguir uma arquitetura modular para facilitar futuras manutenções e expansões.
+Assim, a complexidade ciclomática é:
+\[ V(G) = 9 - 8 + 2 \times 1 = 3 \]
 
-### As conexões utilizadas foram fechadas?
-- **Situação Atual**: As conexões com o banco de dados não são fechadas adequadamente, levando a possíveis vazamentos de recursos.
-- **Proposta de Correção**: Assegurar que todas as conexões, `Statement` e `ResultSet` sejam fechadas corretamente em blocos `finally`.
+## Caminhos de Teste
+Baseado na complexidade ciclomática, identificamos que existem três caminhos independentes no método `verificarUsuario`. Cada caminho representa uma sequência de execução que deve ser coberta por testes unitários para garantir uma cobertura de teste adequada.
 
-## Ferramentas Utilizadas
-- **FindBugs**: Recomendamos utilizar para identificar e corrigir bugs e problemas de segurança no código.
-- **Git**: Usado para controle de versão e colaboração.
-
-## Observações sobre os testes de caixa branca:
-- **Observações**: Para visualizar as observações acesse a [Planilha](https://docs.google.com/spreadsheets/d/1WgZ5lpHDEd8cVqfdenVvF3V6-dxjeqnROvDYtFF5kqU/edit?usp=sharing) e vá até a aba `CAIXA BRANCA (ESTÁTICO)`
+### Caminhos Identificados
+1. Caminho 1: Entrada -> Conectar BD -> Construir SQL -> Executar SQL -> Verificar Resultado (Usuário não encontrado) -> Saída
+2. Caminho 2: Entrada -> Conectar BD -> Construir SQL -> Executar SQL -> Verificar Resultado (Usuário encontrado) -> Atualizar Variáveis -> Saída
+3. Caminho 3: Entrada -> Conectar BD -> Construir SQL -> Executar SQL -> Tratamento de Exceções -> Saída
 
 ## Conclusão
-As propostas de correção baseadas nos princípios de teste de caixa branca visam melhorar a qualidade e segurança do código. Este exercício também enfatiza a importância das boas práticas de programação e do teste contínuo.
+A análise de fluxo e a determinação da complexidade ciclomática do método `verificarUsuario` ajudam a entender as diferentes condições que o método pode encontrar e a preparar casos de teste que cobrem todos os caminhos possíveis, garantindo assim uma melhor qualidade e robustez do software.
