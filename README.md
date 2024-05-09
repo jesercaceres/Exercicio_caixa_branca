@@ -34,7 +34,7 @@ Este projeto envolve a análise e proposta de correções para um código Java q
 - **Git**: Usado para controle de versão e colaboração.
 
 ## Observações sobre os testes de caixa branca:
-- **Teste de caixa branca**: Para visualizar as observações acesse a [Planilha](https://docs.google.com/spreadsheets/d/1WgZ5lpHDEd8cVqfdenVvF3V6-dxjeqnROvDYtFF5kqU/edit?usp=sharing) e vá até a aba `CAIXA BRANCA (ESTÁTICO)`
+- **Observações**: Para visualizar as observações acesse a [Planilha](https://docs.google.com/spreadsheets/d/1WgZ5lpHDEd8cVqfdenVvF3V6-dxjeqnROvDYtFF5kqU/edit?usp=sharing) e vá até a aba `CAIXA BRANCA (ESTÁTICO)`
 
 ## Conclusão
 As propostas de correção baseadas nos princípios de teste de caixa branca visam melhorar a qualidade e segurança do código. Este exercício também enfatiza a importância das boas práticas de programação e do teste contínuo.
